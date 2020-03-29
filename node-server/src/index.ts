@@ -45,7 +45,10 @@ app.get("/locations", async (req, res) => {
     const message = `id: ${id}\nevent: pos\ndata: ${JSON.stringify(position)}\n\n`
     res.write(message);
   }
-  res.write('id: end\nevent: end\ndata: end\n\n');
+  if (!res.socket.destroyed) {
+    res.write('id: end\nevent: end\ndata: end\n\n');
+  }
+  res.end();
 });
 
 app.listen(port, () => {
