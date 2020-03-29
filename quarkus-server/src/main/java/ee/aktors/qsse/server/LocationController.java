@@ -76,6 +76,9 @@ public class LocationController {
                                           location.pos,
                                           Math.round((location.dts / finalSpeed) * 1000.0))))
                               .build();
+                      if (sink.isClosed()) {
+                        return;
+                      }
                       sink.send(sseEvent);
                       lastTs.set(location.dts);
                     });

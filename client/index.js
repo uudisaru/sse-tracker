@@ -19,8 +19,8 @@ import place from "./assets/place-pin.svg";
 const vectorSource = new VectorSource();
 let trackClosest = false;
 
-const NODE_API = process.env.NODE_API || "//localhost:8128/locations";
-const QUARKUS_API = process.env.QUARKUS_API || "//localhost:8081/locations";
+const NODE_API = process.env.NODE_API;
+const QUARKUS_API = process.env.QUARKUS_API;
 
 function get(url, callback) {
   const client = new XMLHttpRequest();
