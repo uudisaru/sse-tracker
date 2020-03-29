@@ -34,7 +34,6 @@ app.get("/locations", async (req, res) => {
   if (req.query.speed) {
     speed = (Number(req.query.speed) * 1000) / 3600;
   }
-  console.debug("Speed:", speed);
   const asyncIterator = locationGenerator(locationData.locations, speed);
   for await (const position of asyncIterator) {
     if (res.socket.destroyed) {
