@@ -1,0 +1,23 @@
+{
+  "name": "igc",
+  "dependencies": {
+    "@polymer/paper-checkbox": "^3.1.0",
+    "@polymer/paper-radio-group": "^3.0.1",
+    "@polymer/paper-slider": "^3.0.1",
+    "ol": "^6.2.1"
+  },
+  "browserslist": [
+    "Chrome >= 51",
+    "Firefox >= 54",
+    "Edge >= 14",
+    "Safari >= 10"
+  ],
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "parcel": "1.11.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build --experimental-scope-hoisting --public-url . index.html"
+  }
+}

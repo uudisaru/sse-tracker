@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tracker SSE</title>
+    <style>
+      .map {
+        width: 100%;
+        height: calc(100vh - 200px);
+      }
+      .controls {
+        display: flex;
+        margin-top: 15px;
+      }
+      .controls #show-closest {
+        padding-top: 11px;
+      }
+      .controls > div {
+        margin-left: 20px;
+      }
+      .controls .speed {
+        display: flex;
+      }
+      .controls #speed-indicator {
+        margin-left: 15px;
+        width: 45px;
+      }
+      .controls label {
+        font-size: 18px;
+      }
+      .controls .speed label {
+        padding-top: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <!-- <input id="time" type="range" value="0" steps="1" />
+    <div id="info">&nbsp;</div> -->
+    <div class="controls">
+      <paper-checkbox id="show-closest">Show closest position</paper-checkbox>
+      <div class="speed">
+        <label id="label-speed">Current speed:</label>
+        <label id="speed-indicator">400 km/h</label>
+        <paper-slider
+            id="speed"
+            aria-labelledby="label-speed"
+            value="1000"
+            max="1000"
+            pin
+            secondary-progress="200"
+            step="5">
+        </paper-slider>
+      </div>
+      <div>
+        <label id="label2">Backend:</label>
+        <paper-radio-group id="backend" selected="quarkus" aria-labelledby="label2">
+          <paper-radio-button name="node">Node</paper-radio-button>
+          <paper-radio-button name="quarkus">Quarkus</paper-radio-button>
+        </paper-radio-group>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
